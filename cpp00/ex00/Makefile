@@ -1,5 +1,5 @@
-COMPILER = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror
 NAME = megaphone
 SRC = megaphone.cpp
 OBJ = $(SRC:.cpp=.o)
@@ -7,7 +7,10 @@ OBJ = $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(COMPILER) $(OBJ) $(FLAGS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+
+%.o:%.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ)
