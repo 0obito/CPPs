@@ -5,11 +5,15 @@
 
 class PhoneBook
 {
+    private:
+        Contact _contacts[8];
+        int     _index;
+        int     _total;
     public:
         PhoneBook();
         ~PhoneBook();
-        Contact contacts[8];
-    private:
+        void    AddContact();
+        void    SearchContact() const;
 };
 
 #endif
