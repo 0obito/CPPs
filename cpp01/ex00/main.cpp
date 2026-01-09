@@ -4,6 +4,7 @@ int main()
 {
     randomChump("A");
     Zombie *sp = newZombie("B");
-    (void)sp;
+    sp->announce();
+    delete(sp);
     return (0);
 }
